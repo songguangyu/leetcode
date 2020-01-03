@@ -31,3 +31,28 @@ var isValid = function (str) {
 }
 
 ```
+
+var isValid = function (str) {
+  const preTag = /<\s?[a-z]+\s?(>|/>)/;
+  const stack = [];
+  const tempIndex = 0;
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] === '<') {
+      tempIndex = i;
+    }
+    if ( str[i] === '>') {
+      const tag = str.slice(tempIndex, i);
+    }
+    if (str[i]+str[i+1] === '/>') {
+
+    }
+  }
+}
+
+## 深入思考，判断HTML元素标签是否闭合？
+case 1: <input />
+case 2: <div></div>
+case 3: <span><123</span>
+case 3: <span>123></span>
+case 4: <span><123></span>
+case 5: <span><sgy/></span>
